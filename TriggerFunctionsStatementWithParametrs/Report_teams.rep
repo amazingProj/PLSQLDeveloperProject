@@ -1,0 +1,91 @@
+PL/SQL Developer Report
+
+[SQL]
+select Teamname As name, Team.Qwnername As owner, Team.Coachname As coach,
+Standing.Points As points,
+(select count(*) from Player p where p.teamname = Teamname) As number_of_players, (select count(*) 
+from Game g where g.winnername = Teamname or g.losername = Teamname) As number_of_games
+from Team natural join Standing
+group by TeamName, Team.Qwnername, Team.Coachname, Standing.Points
+having Length(TeamName) >= 3 and Length(Team.Qwnername) >= 3
+order by Name ASC;
+
+[Options]
+Connect=False
+Username=
+Password=2480
+Database=
+ConnectAs=
+LockMode=0
+LockedPassword=2362
+BkgColor=-16777211
+BkgImage=
+FormLayout=False
+OnlyNBSP=False
+LeftMargin=0
+TopMargin=0
+PageBreak=0
+AddSQL=False
+HandleTags=True
+
+[Styles]
+
+{Title}
+Enabled=True
+Name=Report Title
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Param}
+Enabled=True
+Name=Variables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Table}
+Enabled=True
+Name=Tabular Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Form}
+Enabled=True
+Name=Form Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Field}
+Enabled=True
+Name=Default Field
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+
+
+[CSS]
+

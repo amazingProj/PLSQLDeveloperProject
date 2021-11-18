@@ -1,0 +1,92 @@
+PL/SQL Developer Report
+
+[SQL]
+select c.courseid, case c.day_time when 1 then 'Sunday' when 2 then 'monday' when 3 then
+'thuesday' when 4 then 'Wensday' when 5 then 'Tuesday' when 6 then 'friday' when 7 then
+'saturday' end As day, c.points As points, (select LastName from Person p where p.personid = c.personid) As
+Last_name, (select FirstName from Person p where p.personid = c.personid) As
+First_name
+from Course c 
+group by c.courseid, c.day_time, c.points, c.personid
+having Length(c.courseid) >= 5 and Length(c.courseid) <= 9
+order by c.courseid ASC;
+
+[Options]
+Connect=False
+Username=
+Password=2432
+Database=
+ConnectAs=
+LockMode=0
+LockedPassword=2298
+BkgColor=-16777211
+BkgImage=
+FormLayout=False
+OnlyNBSP=False
+LeftMargin=0
+TopMargin=0
+PageBreak=0
+AddSQL=False
+HandleTags=True
+
+[Styles]
+
+{Title}
+Enabled=True
+Name=Report Title
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Param}
+Enabled=True
+Name=Variables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Table}
+Enabled=True
+Name=Tabular Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Form}
+Enabled=True
+Name=Form Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Field}
+Enabled=True
+Name=Default Field
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+
+
+[CSS]
+
